@@ -1,0 +1,19 @@
+# Ignore all files without an extension (these are usually your compiled binaries)
+*
+!*.cpp
+!*.h
+!*.hpp
+!*.md
+!.gitignore
+!*/
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Debug symbol folders (macOS)
+*.dSYM/
+**/*.dSYM/
+**/.DS_Store

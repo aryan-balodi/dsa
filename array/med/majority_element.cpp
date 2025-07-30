@@ -93,4 +93,6 @@ int main() {
     else {
         cout << "Invalid choice; please choose between 'brute', 'better' and 'optimal' ONLY.";
     }
+
+    return 0;
 }

@@ -88,7 +88,11 @@ int main() {
         int start = answer_optimal[1];
         int end = answer_optimal[2];
         cout << "The maximum subarray sum is: " << maxSum << endl;
-        cout << "The subarray incides are: [" << start << ", " << end << "]" << endl;
+        cout << "The elements of the sub-array are: [ ";
+        for (int i = start; i <= end; i++) {
+            cout << arr[i] << " ";
+        }
+        cout << "]" << endl;
     }
     else {
         cout << "Invalid choice; please choose between 'brute', 'better' and 'optimal' ONLY.";

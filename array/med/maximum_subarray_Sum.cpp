@@ -80,7 +80,7 @@ int main() {
     }
     else if (choice == "better") {
         answer = better(arr,n);
-        cout << "TThe maximum subarray sum is:: " << answer << endl;
+        cout << "The maximum subarray sum is: " << answer << endl;
     }
     else if (choice == "optimal") {
         vector<int> answer_optimal = optimal(arr,n);

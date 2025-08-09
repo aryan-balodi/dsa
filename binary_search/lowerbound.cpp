@@ -1,6 +1,13 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
+
+
+// how to implement LB in cpp using STL:
+// auto lb = lower_bound(start point, end point, target element)
+// auto lb = lower_bound(arr.begin(), arr.end(), x) {this will return an iterator pointing to that index} -> cout << *lb << endl;
+// auto lb = lower_bound(arr.begin(), arr.end(), x) {lb - arr.begin()} -> {substract the beginer iterator to get the index}
 
 int lower_bound (vector<int> &arr, int n, int x) {
     int low = 0; int high = n - 1;
@@ -34,9 +41,11 @@ int main () {
     cout << "Enter the target element 'x' for which we need to find the lower bound: ";
     cin >> x;
 
-    int answer = lower_bound(arr,n,x);
+    // int answer = lower_bound(arr,n,x);
 
-    cout << "The index position of the element which is the lower bound for 'x' is: " << answer << endl;
+    auto lb = lower_bound(arr.begin(), arr.end(), x);
+
+    cout << "The index position of the element which is the lower bound for 'x' is: " << lb - arr.begin() << endl;
 
     return 0;
 

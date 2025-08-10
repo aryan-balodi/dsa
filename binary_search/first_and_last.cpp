@@ -43,6 +43,21 @@ using namespace std;
         }
         return ans;
     }
+
+
+    to count number of occurances we do:
+    pair<int,int> searchRange(vector<int>& nums, int n, int x) {
+        int left = first(nums,x);
+        if (left == -1) return {-1,-1};
+        int right = last(nums,x);
+        return {left,right};
+    }
+
+    int count(vector<int> &arr, int n, int x) {
+    pair<int,int> ans = searchRange(arr,n,x);
+    if (ans.first == 0) return {-1,-1}
+    else return ans.second - ans.first + 1;
+    }
 */
 
 int LB (vector<int> &arr, int n, int x) {

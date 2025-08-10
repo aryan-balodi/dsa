@@ -2,6 +2,49 @@
 #include<vector>
 using namespace std;
 
+// without using lower bound and upper bound using normal binary search.
+
+/*int first (vector<int> &nums, int target) {
+        int n = nums.size();
+        int ans = -1;
+        int low = 0; int high = n - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (nums[mid] == target) {
+                ans = mid;
+                high = mid - 1;
+            }
+            else if (nums[mid] < target) {
+                low = mid + 1;
+            }
+            else {
+                high = mid - 1;
+            }
+        }
+        return ans;
+    }
+
+    int last (vector<int> &nums, int target) {
+        int n = nums.size();
+        int ans = n;
+        int low = 0; int high = n - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (nums[mid] == target) {
+                ans = mid;
+                low = low + 1;  
+            }
+            else if (nums[mid] < target) {
+                low = mid + 1;
+            }
+            else {
+                high = mid - 1;
+            }
+        }
+        return ans;
+    }
+*/
+
 int LB (vector<int> &arr, int n, int x) {
     int ans = n;
     int low = 0; int high = n - 1;

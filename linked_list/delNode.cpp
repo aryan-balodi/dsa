@@ -40,6 +40,45 @@ ListNode *removeHead(ListNode *head) {
     return head;
 }
 
+ListNode *removeTail(ListNode *head) {
+    if (head == NULL || head->next == NULL) return NULL;
+
+    ListNode *temp = head;
+    while (temp->next->next != NULL) {
+        temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = nullptr;
+
+    return head;
+}
+
+ListNode *delElement(ListNode *head, int k) {
+    if (head == NULL) return head;
+
+    if (k == 1) {
+        ListNode *temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+
+    ListNode *temp = head; int counter = 0; ListNode *prev = NULL;
+
+    while (temp) {
+        counter++;
+
+        if (k == counter) {
+            prev->next = prev->next->next;
+            delete temp;
+            break;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+    return head;
+}
+
 void print(ListNode *head) {
     ListNode *temp = head;
 
@@ -56,7 +95,7 @@ int main() {
 
     ListNode *head = Arr2LL(arr);
 
-    head  = removeHead(head);
+    head  = removeTail(head);
 
     
     print(head);

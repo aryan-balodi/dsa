@@ -41,11 +41,25 @@ int lengthOfLL(Node *head) {
     return count;
 }
 
+bool checkIfPresent(Node *head, int val) {
+    Node *temp = head;
+    while (temp) {
+        if (temp->data ==val) return true;
+        temp = temp->next;
+    }
+    return false;
+}
+
 int main() {
     vector<int> arr = {5, 6, 7, 8, 9};
     Node *head = Array2LL(arr);
+    
+    int val; 
+    
+    cout << "Enter the value u wish to check in the LL: ";
+    cin >> val;
 
-    cout << "The length of the Linked List is: " << lengthOfLL(head) << endl;
+    cout << checkIfPresent(head,val) << endl;
 
     return 0;
 }

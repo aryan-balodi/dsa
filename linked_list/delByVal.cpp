@@ -44,6 +44,13 @@ void print(ListNode *head) {
 ListNode *DelByVal(ListNode *head, int val) {
     if (head == NULL) return head;
 
+    if (head->data == val) {
+        ListNode *temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+
     ListNode *temp = head; ListNode *prev = NULL;
 
     while (temp) {
@@ -63,7 +70,7 @@ int main() {
 
     ListNode *head = Arr2LL(arr);
 
-    head = DelByVal(head,8);
+    head = DelByVal(head,2);
 
     print(head);
 

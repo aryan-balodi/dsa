@@ -62,6 +62,8 @@ ListNode *SortWCount(ListNode *head) {
 }
 
 ListNode *SortonePass(ListNode *head) {
+    if (head == nullptr || head->next == nullptr) return head;
+
     ListNode *DummyZero = new ListNode(-1); ListNode *moverZero = DummyZero;
     ListNode *DummyOne = new ListNode(-1); ListNode *moverOne = DummyOne;
     ListNode *DummyTwo = new ListNode(-1); ListNode *moverTwo = DummyTwo;
@@ -104,7 +106,7 @@ void print(ListNode *head) {
 
 
 int main() {
-    vector<int> arr = {1,0,1,2,0,2,1};
+    vector<int> arr = {0,0,1,0,2,1,1,2,1,2,2};
 
     ListNode *head = Arr2LL(arr);
 

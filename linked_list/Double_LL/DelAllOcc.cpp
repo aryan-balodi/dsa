@@ -47,7 +47,7 @@ DListNode *DelAllOccurances(DListNode *head, int k) {
 
 }
 
-DListNode *Arr2LL(vector<int> &arr) {
+DListNode *Arr2DLL(vector<int> &arr) {
     DListNode *head = new DListNode(arr[0]);
     DListNode *prev = head;
 
@@ -72,7 +72,7 @@ void print(DListNode *head) {
 int main() {
     vector<int> arr = {2,2,6,2,10};
 
-    DListNode *head = Arr2LL(arr);
+    DListNode *head = Arr2DLL(arr);
 
     head = DelAllOccurances(head,2);
 

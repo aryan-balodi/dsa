@@ -39,7 +39,7 @@ void print(ListNode *head) {
     cout << "END" << endl;
 }
 
-ListNode *Merge2SortedLL(ListNode *head1, ListNode *head2) {
+ListNode *Brute(ListNode *head1, ListNode *head2) {
     ListNode *mover1 = head1; ListNode *mover2 = head2;
 
     vector<int> container;
@@ -62,6 +62,30 @@ ListNode *Merge2SortedLL(ListNode *head1, ListNode *head2) {
 
 }
 
+ListNode *Optimal(ListNode *head1, ListNode *head2) {
+    ListNode *dummy = new ListNode(-1);
+    ListNode *temp = dummy;
+    ListNode *t1 = head1; ListNode *t2 = head2;
+
+    while (t1 != nullptr && t2 != nullptr) {
+        if (t1->data < t2->data) {
+            temp->next = t1;
+            temp = t1;
+            t1 = t1->next;
+        }
+        else {
+            temp->next = t2;
+            temp = t2;
+            t2 = t2->next;
+        }
+    }
+
+    if (t1) temp->next = t1;
+    else temp->next = t2;
+
+    return dummy->next;
+}
+
 
 
 
@@ -72,7 +96,7 @@ int main() {
     ListNode *head1 = Arr2LL(arr1);
     ListNode *head2 = Arr2LL(arr2);
 
-    ListNode *mergedhead = Merge2SortedLL(head1, head2);
+    ListNode *mergedhead = Optimal(head1, head2);
 
     print(mergedhead);
 

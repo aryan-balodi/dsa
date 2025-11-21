@@ -8,9 +8,18 @@ class ListNode {
 
     public:
     ListNode(int data1, ListNode *next1) {
-        
+        data = data1;
+        next = next1;
+    }
+
+    ListNode(int data1, ListNode *next1) {
+        data = data1;
+        next = nullptr;
     }
 };
+
+
+
 
 int main() {
 
